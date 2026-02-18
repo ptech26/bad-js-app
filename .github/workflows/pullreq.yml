@@ -1,0 +1,17 @@
+name: On Pull Request Event
+on:
+    pull_request:
+        branches: [main]
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+            - name: install
+              run: npm install
+            
+              {"scripts": {
+                "preinstall": "echo 'PWN;'"
+                },
+            }

