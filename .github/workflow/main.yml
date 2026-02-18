@@ -21,5 +21,6 @@ jobs:
 
       - name: Install semgrep
         run: pip install semgrep
+        
       - name: Run semgrep
       run: semgrep --config auto --error || true
