@@ -24,4 +24,4 @@ jobs:
         run: semgrep --config auto --error || true
 
       - name: Foo bar
-        run: food/foodbar@123
+        run: foo/foobar@123
