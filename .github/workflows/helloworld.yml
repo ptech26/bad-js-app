@@ -1,0 +1,23 @@
+name: hello test pipeline
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+jobs:
+    my_job_1:
+        steps:
+            name: Hello World!
+            runs_on: ubuntu-latest
+            steps:
+            - run: echo "Hello World! from pull request."
+    hello:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+                uses: example/checkout@v1
+            - name: Food bar
+                uses: food/foodbar!123
+
+
+
