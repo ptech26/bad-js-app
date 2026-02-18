@@ -7,18 +7,16 @@ on:
 jobs:
   semgrep:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v3
-      - name: Run Semgrep
-        uses: returntocorp/semgrep-action@v1
-        with:
-          config: 'p/ci'
+      - name: checkout code
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
-
+          python-version: '3.14.x'
+          
       - name: Install semgrep
         run: pip install semgrep
         
